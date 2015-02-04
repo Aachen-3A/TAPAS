@@ -96,10 +96,12 @@ echo "source $dir/tools3a/set_env.sh" >> setenv_tapas.sh
 #get othe repos without veto
 if [ $analyze -eq 0 ]; then
     git clone git@github.com:Aachen-3A/PxlAnalyzer.git $dir/PxlAnalyzer
+    echo "source $dir/PxlAnalyzer/set_env.sh" >> setenv_tapas.sh
 fi
 
 if [ $plotting -eq 0 ]; then
     git clone git@github.com:Aachen-3A/PlotLib.git $dir/PlotLib
+    echo "source $dir/PlotLib/set_env.sh" >> setenv_tapas.sh
 fi
 
 if [ $skim -eq 0 ]; then

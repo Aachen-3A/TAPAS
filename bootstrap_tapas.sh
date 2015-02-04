@@ -125,8 +125,8 @@ if [ $skim -eq 0 ]; then
     cd $dir/PxlSkimmer
     git checkout -b dev origin/dev
     git checkout master
-    source $dir/MUSiC-Skimmer/bootstrap_MUSiC-Skimmer.sh
-    echo "source $dir/MUSiC-Skimmer/set_env.sh" >> setenv_tapas.sh
+    source $dir/PxlSkimmer/bootstrap_PxlSkimmer.sh
+    echo "source $dir/PxlSkimmer/set_env.sh" >> setenv_tapas.sh
     cd $dir
 fi
 

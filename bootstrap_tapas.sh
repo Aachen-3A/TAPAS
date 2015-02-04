@@ -1,6 +1,6 @@
 #!/bin/bash
 ##
-## bootstrao_tapas.sh
+## bootstrap_tapas.sh
 ## 
 ## Copyright 2015 Tobias Pook <pook <at> physik.rwth-aachen.de>
 ## 
@@ -81,31 +81,51 @@ cd $pwd
 
 
 git clone git@github.com:Aachen-3A/libs3a.git $dir/libs3a
-chmod u+x $dir/libs3a/setup.sh
-$dir/libs3a/setup.sh
-source $dir/libs3a/set_env.sh
+cd $dir/libs3a
+git checkout -b dev origin/dev
+git checkout master
+chmod u+x setup.sh
+./setup.sh
+source set_env.sh
+cd $dir
 echo "source $dir/libs3a/set_env.sh" >> setenv_tapas.sh
 
 git clone git@github.com:Aachen-3A/tools3a.git $dir/tools3a
-chmod u+x $dir/tools3a/setup.sh
-$dir/tools3a/setup.sh
-source $dir/tools3a/set_env.sh
+cd $dir/tools3a
+git checkout -b dev origin/dev
+git checkout master
+chmod u+x setup.sh
+./setup.sh
+source set_env.sh
+cd $dir
 echo "source $dir/tools3a/set_env.sh" >> setenv_tapas.sh
 
 
 #get othe repos without veto
 if [ $analyze -eq 0 ]; then
     git clone git@github.com:Aachen-3A/PxlAnalyzer.git $dir/PxlAnalyzer
+    cd $dir/PxlAnalyzer
+    git checkout -b dev origin/dev
+    git checkcout master
+    cd $dir
 fi
 
 if [ $plotting -eq 0 ]; then
     git clone git@github.com:Aachen-3A/PlotLib.git $dir/PlotLib
+    cd $dir/PxlAnalyzer
+    git checkout -b dev origin/dev
+    git checkout master
+    cd $dir
 fi
 
 if [ $skim -eq 0 ]; then
-    git clone git@github.com:Aachen-3A/MUSiC-Skimmer.git $dir/MUSiC-Skimmer
+    git clone git@github.com:Aachen-3A/PxlSkimmer.git $dir/PxlSkimmer
+    cd $dir/PxlSkimmer
+    git checkout -b dev origin/dev
+    git checkout master
     source $dir/MUSiC-Skimmer/bootstrap_MUSiC-Skimmer.sh
     echo "source $dir/MUSiC-Skimmer/set_env.sh" >> setenv_tapas.sh
+    cd $dir
 fi
 
 

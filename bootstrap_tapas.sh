@@ -107,7 +107,7 @@ if [ $analyze -eq 0 ]; then
     echo "source $dir/PxlAnalyzer/set_env.sh" >> setenv_tapas.sh
     cd $dir/PxlAnalyzer
     git checkout -b dev origin/dev
-    git checkcout master
+    git checkout master
     cd $dir
 fi
 

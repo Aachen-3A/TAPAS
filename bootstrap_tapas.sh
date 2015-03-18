@@ -65,7 +65,14 @@ echo "# This is a TAPAS set_env script. Source it before usage of TAPAS \n" > se
 echo '# make sure a git version above 1.8.1 is used. This is necessary for all hooks to work.' >> setenv_tapas.sh
 echo "export TAPASDOC=$pwd/doc/" >> setenv_tapas.sh
 source ./setenv_tapas.sh
-echo 'export PATH=/cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/git/1.8.3.1-cms/bin/:$PATH' >> setenv_tapas.sh
+echo '# make sure a git version above 1.8.1 is used. This is necessary for all hooks to work.' >> setenv_tapas.sh
+echo '#alternative git version' >> setenv_tapas.sh
+echo 'ALTGIT=/cvmfs/cms.cern.ch/slc6_amd64_gcc481/external/git/1.8.3.1-cms/bin/' >> setenv_tapas.sh
+echo 'if [[ ":$PATH:" == *":$ALTGIT:"* ]]; then' >> setenv_tapas.sh
+echo 'echo "git 1.8.3 already in path"' >> setenv_tapas.sh
+echo 'else' >> setenv_tapas.sh
+echo 'export PATH=$ALTGIT:$PATH' >> setenv_tapas.sh
+echo 'fi' >> setenv_tapas.sh
 
 echo '#################################'
 echo '### clone all requested repos ###'

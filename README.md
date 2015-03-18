@@ -14,3 +14,7 @@ Only libs and tools repos are mandatory for the framework. You can call the boot
 * -p no PlotLib
 * -s no PxlSkimmer
 * -a no PxlAnalyzer
+
+##Using TAPAS
+Each repository contains a set_env script which you should source before using it. To make your live easier
+TAPAS creates a script called setenv_tapas.sh when you run the inital setup script. You simply need to source this script and set_env scripts in all installed repos will also be sourced. The setenv_tapas.sh script also includes a necessary change of the used git version for "modern" hooks on the Aachen cluster. You may add this line in your .bashrc if you use only parts of TAPAS.

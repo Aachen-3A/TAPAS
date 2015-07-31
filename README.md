@@ -28,13 +28,15 @@ Please try to produce readable code. Have a look at the other code in the repo o
 ### Git workflow
 The standard workflow assumes that you created a local branch from the dev branch and work in it until you are ready to push your changes. To do so change to the dev branch and pull to make sure your local dev branch is up to date. The next step is to merge your feature branch in to dev:
 
+$git checkout dev
+
 $git merge YOURBRANCH
 
-It is possible that you need to resolve merge conflicts between your changes and the changes in dev since you started to work on your own branch. The kast step is to push your changes to github
+It is possible that you need to resolve merge conflicts between your changes and the changes in dev which were added since you started working on your own branch. After resolving all conflics, the last step is to push your changes to github:
 
 $git push origin dev
 
-The merge procedure from the dev to master branc differs for the TAPAS repos and is documented in the individual 
+The merge procedure from the dev to master branch differs for the TAPAS repos and is documented in each individual repository.  
 ### Preparig your commit
 It is uesful to follow some guidelines for commits in order to make the structured and understandable for other contributors:
 

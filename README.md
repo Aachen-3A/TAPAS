@@ -8,6 +8,8 @@ Clone the Tapas repository, which contains the script tapas_bootstrap.sh. You ca
 * PlotLib ( Ploting lib for custom plotting apps )
 * PxlSkimmer ( Skimmer which prepares data as provided by CMS in pxlio file )
 * PxlAnalyzer ( Basic machinery to run Analysis on skimmed files. You can implement your own Analysis as a SpecialAna here )
+Maybe you need to generate an SSH-Key and add it to your GitHub-Account (see https://help.github.com/articles/generating-ssh-keys/)
+
 
 ### Installing only parts of TAPAS
 Only libs and tools repos are mandatory for the framework. You can call the bootstrap script with veto flags if you do not want to install a part, flags:

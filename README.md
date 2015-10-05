@@ -2,7 +2,7 @@
 Three A Physics Analysis Software
 
 ##Setup Tapas
-Clone the Tapas repository, which contains the script tapas_bootstrap.sh. You can simply run this script to install TAPAS with all parts:
+Clone the Tapas repository, which contains the script bootstrap_tapas.sh. You can simply run this script to install TAPAS with all parts:
 * libs3a ( Common libs for framework )
 * tools3a ( Common tools for framework )
 * PlotLib ( Ploting lib for custom plotting apps )
